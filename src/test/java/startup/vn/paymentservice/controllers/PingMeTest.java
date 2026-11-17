@@ -1,4 +1,4 @@
-package startup.vn.cartservice.controllers;
+package startup.vn.paymentservice.controllers;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +10,6 @@ class PingMeTest {
     void pingReturnsPongMessage() {
         PingMe pingMe = new PingMe();
 
-        assertEquals("[cart-service] Pong!", pingMe.ping());
+        assertEquals("[payment-service] Pong!", pingMe.ping());
     }
 }

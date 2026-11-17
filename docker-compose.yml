@@ -17,22 +17,22 @@ services:
       timeout: 5s
       retries: 5
 
-  cart-service:
+  payment-service:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: cart-service-container
+    container_name: payment-service-container
     restart: unless-stopped
     environment:
       - CORE_DB_URL=${CORE_DB_URL}
       - CORE_DB_USERNAME=${CORE_DB_USERNAME}
       - CORE_DB_PW=${CORE_DB_PW}
-      - CART_SERVICE_PORT=${CART_SERVICE_PORT}
+      - PAYMENT_SERVICE_PORT=${PAYMENT_SERVICE_PORT}
     depends_on:
       cart-db:
         condition: service_healthy
     ports:
-      - "${CART_SERVICE_PORT}:${CART_SERVICE_PORT}"
+      - "${PAYMENT_SERVICE_PORT}:${PAYMENT_SERVICE_PORT}"
 
 volumes:
     pg-data:
