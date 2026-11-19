@@ -24,7 +24,7 @@ jobs:
 
       - name: Build lowercase image reference
         run: |
-          IMAGE_REF="ghcr.io/BuiHoaBku97/devops-ss07-payment-service:1.0.0"
+          IMAGE_REF="ghcr.io/buihoabku97/payment-service:1.0.0"
           IMAGE_REF="$(printf '%s' "$IMAGE_REF" | tr '[:upper:]' '[:lower:]')"
           echo "IMAGE_REF=$IMAGE_REF" >> "$GITHUB_ENV"
           echo "Using image: $IMAGE_REF"
